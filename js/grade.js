@@ -24,7 +24,7 @@ function createBimesterButtons() {
         $( buttonContainer ).appendTo('div.bimester-buttons');
         var bimesterText = bimesterArray[i].replace("_", " ").toLowerCase();
         var linkButton = "#"; //getGradeURL(selectedSubject, gradeArray[i])
-        createLinks('btn btn-primary', bimesterText, linkButton, buttonContainerClass);
+        createLink('btn btn-primary', bimesterText, linkButton, buttonContainerClass);
     }
 }
 /*function getGradeURL(subject, grade) {

@@ -7,28 +7,32 @@ $(document).ready(function(){
 function createSubjectButtons() {
     $.each(subjectObject, function(grade, value) {
       $.each(value, function(indexValue, subject) {
-          createSubjectButton(subject, grade);
+          createSubjectLink(subject, grade);
       });
     });
 }
-function createSubjectButton(subject, grade) {
-    var buttonContainerClass = 'subject-button-container-'+ subject.toLowerCase();
-    var buttonContainer = "<div class = '" + buttonContainerClass + "'></div>";
+function createSubjectLink(subject, grade) {
+    var buttonContainerClass = 'subject-link-container-'+ subject.toLowerCase();
+    var buttonContainer = "<li class = '" + buttonContainerClass + "'></li>";
     var gradeContainerClass = "grade-button-container-" + grade.toLowerCase().replace("_", "");
-    $( buttonContainer ).appendTo('div.' + gradeContainerClass);
+    var gradeListClass = "grade-list-" + grade.toLowerCase().replace("_", "");
+    $( buttonContainer ).appendTo('ul.' + gradeListClass);
     var linkButton = "#";
     var subjectText = subject.toLowerCase();
     var place = gradeContainerClass + " ."+ buttonContainerClass;
-    createLinks('btn btn-primary', subjectText, linkButton, place);
+    createLink('', subjectText, linkButton, place);
 }
 function createGradeButtons() {
     for (var i = 0; i < gradeArray.length; i++) {
       var buttonContainerClass = 'grade-button-container-'+ gradeArray[i].toLowerCase().replace("_", "");
-      var buttonContainer = "<div class = '" + buttonContainerClass + "' style='display: inline-block;'></div>";
+      var buttonContainer = "<div class = 'dropdown " + buttonContainerClass + "' style='display: inline-block;'></div>";
       $( buttonContainer ).appendTo('div.grade-buttons');
       var linkButton = getGradeURL(gradeArray[i]);
       var gradeText = gradeArray[i].toLowerCase().replace("_", " ");
-      createLinks('btn btn-primary', gradeText, linkButton, buttonContainerClass);
+      createButton('btn btn-primary dropdown-toggle', gradeText, linkButton, "dropdown", buttonContainerClass);
+      var gradeListClass = "grade-list-" + gradeArray[i].toLowerCase().replace("_", "");
+      var buttonList = "<ul class='dropdown-menu " + gradeListClass + "'></ul>";
+      $( buttonList ).appendTo('div.' + buttonContainerClass);
     }
 }
 function getSubjectObject() {

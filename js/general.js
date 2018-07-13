@@ -12,7 +12,16 @@ function setGradeArray() {
     });
 }
 
-function createLinks( buttonClass, text, link, buttonContainerClass) {
+function createButton( buttonClass, text, link, dataToogle, buttonContainerClass) {
+    $('<button>',{
+      type: "button",
+      class: buttonClass,
+      "data-toggle": dataToogle,
+      text: text,
+    }).appendTo( "div." + buttonContainerClass );
+}
+
+function createLink( buttonClass, text, link, buttonContainerClass) {
     $('<a>',{
       class: buttonClass,
       text: text,

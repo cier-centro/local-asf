@@ -10,7 +10,7 @@ function createGradeButtons() {
         $( buttonContainer ).appendTo('div.grade-buttons');
         var gradeText = gradeArray[i].replace("_", " ").toLowerCase();
         var linkButton = getGradeURL(selectedSubject, gradeArray[i]);
-        createLinks('btn btn-primary', gradeText, linkButton, buttonContainerClass);
+        createLink('btn btn-primary', gradeText, linkButton, buttonContainerClass);
     }
 }
 function getGradeURL(subject, grade) {

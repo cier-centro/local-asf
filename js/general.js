@@ -1,17 +1,14 @@
 $(document).ready(function(){
-    subjectArray = [];
     gradeArray = [];
-    setSubjectAndGradeArray();
+    subjectObject = [];
+    setGradeArray();
+    console.log(paths);
     console.log(gradeArray);
-    console.log(subjectArray);
 });
 
-function setSubjectAndGradeArray() {
+function setGradeArray() {
     $.each(paths, function(index, object) {
         gradeArray.push(index);
-        for (var property in object) {
-            if($.inArray(property, subjectArray) === -1) subjectArray.push(property);
-        }
     });
 }
 

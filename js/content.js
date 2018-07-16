@@ -1,17 +1,21 @@
 $(document).ready(function(){
     selectedSubject = getAllUrlParams().sbj;
     selectedGrade = getAllUrlParams().grd;
+    selectedArray = getSelectedParametersArray();
     $( "h1.main-title" ).text( selectedSubject );
     $( "h2.grade-title" ).text( selectedGrade );
     bimesterArray = getBimesterArray();
     console.log(bimesterArray);
     createBimesterButtons();
 });
-function getBimesterArray() {
-    var bimesterArray = [];
+function getSelectedParametersArray() {
     var gradeObject = "GRADO_" + selectedGrade;
     var subjectObject = selectedSubject.toUpperCase();
-    var bimesterObject = paths[gradeObject][subjectObject].VIDEOS;
+    return paths[gradeObject][subjectObject];
+}
+function getBimesterArray() {
+    var bimesterArray = [];
+    var bimesterObject = selectedArray.VIDEOS;
     $.each(bimesterObject, function(index, object) {
         bimesterArray.push(index);
     });
@@ -42,6 +46,26 @@ function createBimesterContentContainers(numberOfBimester, bimester, bimesterId)
 function setBimesterContent(bimester, containerClass) {
     var bimesterPanelGroup = getBimesterPanels(bimester);
     $( bimesterPanelGroup ).appendTo('div.' + containerClass);
+    createGuidesButtons(bimester);
+}
+
+function createGuidesButtons(bimester) {
+    var guidesArray = [];
+    var bimesterNumber = bimester.replace("BIMESTRE_", "")
+    var bimesterKey = "BIM" + bimesterNumber;
+    var guidesContainerClass = "guides-panel-" + bimesterNumber;
+    $.each(selectedArray, function(index, object) {
+        if ((isString(object)) && (object.includes(bimesterKey)))
+            guidesArray.push(object);
+    });
+    for (var i = 0; i < guidesArray.length; i++) {
+      var guideText = guidesArray[i].includes("DOCENTE")? "Guía Docente" : guidesArray[i].includes("ESTUDIANTE")? "Guía Estudiante" : "Guía";
+      createButton('btn btn-primary btn-lg btn-guide-'+ bimesterNumber, guideText, "modal", "#myModal", guidesContainerClass);
+    }
+}
+
+function isString(value) {
+    return typeof value === 'string';
 }
 
 function getBimesterPanels(bimester) {

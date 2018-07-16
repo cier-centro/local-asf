@@ -49,7 +49,7 @@ function createGradeButtons() {
       var buttonContainer = "<div class = 'dropdown " + buttonContainerClass + "' style='display: inline-block;'></div>";
       $( buttonContainer ).appendTo('div.grade-buttons');
       var gradeText = gradeArray[i].toLowerCase().replace("_", " ");
-      createButton('btn btn-primary dropdown-toggle', gradeText, "dropdown", buttonContainerClass);
+      createButton('btn btn-primary dropdown-toggle', gradeText, "dropdown", "", buttonContainerClass);
       createSubjectListByGrade(gradeArray[i], buttonContainerClass);
     }
 }
@@ -88,11 +88,12 @@ function setGradeArray() {
     });
 }
 
-function createButton( buttonClass, text, dataToogle, buttonContainerClass) {
+function createButton( buttonClass, text, dataToogle, dataTarget, buttonContainerClass) {
     $('<button>',{
       type: "button",
       class: buttonClass,
       "data-toggle": dataToogle,
+      "data-target": dataTarget,
       text: text,
     }).appendTo( "div." + buttonContainerClass );
 }

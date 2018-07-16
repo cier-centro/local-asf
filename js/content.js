@@ -24,9 +24,24 @@ function createBimesterButtons() {
         buttonContainer += buttonContainerClass + "'></li>";
         $( buttonContainer ).appendTo('ul.bimester-pills');
         var bimesterText = bimesterArray[i].replace("_", " ").toLowerCase();
-        var linkButton = "#bimester" + bimesterArray[i].replace("BIMESTRE_", ""); 
+        var linkButton = "#bimester" + bimesterArray[i].replace("BIMESTRE_", "");
         createLink('', bimesterText, linkButton, 'pill', 'li.' + buttonContainerClass);
+        createBimesterContentContainers(i, bimesterArray[i], linkButton);
     }
+}
+
+function createBimesterContentContainers(numberOfBimester, bimester, bimesterId) {
+    var bimesterContainerClass = 'bimester-link-container-' + bimester.replace("BIMESTRE_", "");
+    var tabPaneClass = ' tab-pane fade'
+    var bimesterContainer = "<div id='" + bimesterId.replace("#", "") + "' class='" + bimesterContainerClass + tabPaneClass;
+    bimesterContainer += (numberOfBimester == 0)? " in active'></div>" : "'></div>";
+    $( bimesterContainer ).appendTo('div.bimester-content');
+    setBimesterContent(bimester, bimesterContainerClass);
+}
+
+function setBimesterContent(bimester, containerClass) {
+    var bimesterLabel = "<h3>Contenido para bimestre " + bimester.replace("BIMESTRE_", "") + "</h3>";
+    $( bimesterLabel ).appendTo('div.' + containerClass);
 }
 
 function getAllUrlParams(url) {

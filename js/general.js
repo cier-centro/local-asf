@@ -2,11 +2,11 @@ $(document).ready(function(){
     gradeArray = [];
     subjectObject = [];
     setGradeArray();
-    console.log(paths);
-    console.log(gradeArray);
     createHomeButton();
     createGradeButtons();
     subjectObject = getSubjectObject();
+    console.log(paths);
+    console.log(gradeArray);
     console.log(subjectObject);
     createSubjectButtons();
 });
@@ -20,15 +20,20 @@ function createSubjectButtons() {
 }
 
 function createSubjectLink(subject, grade) {
-    var buttonContainerClass = 'subject-link-container-'+ subject.toLowerCase();
-    var buttonContainer = "<li class = '" + buttonContainerClass + "'></li>";
+    var buttonContainerClass = getSubjectLinkContainer(subject, grade);
     var gradeContainerClass = "grade-button-container-" + grade.toLowerCase().replace("_", "");
-    var gradeListClass = "grade-list-" + grade.toLowerCase().replace("_", "");
-    $( buttonContainer ).appendTo('ul.' + gradeListClass);
     var linkButton = getSubjectAndGradeURL(subject, grade);
     var subjectText = subject.toLowerCase();
     var place = gradeContainerClass + " ."+ buttonContainerClass;
     createLink('', subjectText, linkButton, place);
+}
+
+function getSubjectLinkContainer(subject, grade) {
+    var buttonContainerClass = 'subject-link-container-'+ subject.toLowerCase();
+    var buttonContainer = "<li class = '" + buttonContainerClass + "'></li>";
+    var gradeListClass = "grade-list-" + grade.toLowerCase().replace("_", "");
+    $( buttonContainer ).appendTo('ul.' + gradeListClass);
+    return buttonContainerClass;
 }
 
 function createHomeButton() {
@@ -37,6 +42,7 @@ function createHomeButton() {
     $( buttonContainer ).appendTo('div.grade-buttons');
     createLink('btn btn-primary', "Inicio", "index.html", buttonContainerClass);
 }
+
 function createGradeButtons() {
     for (var i = 0; i < gradeArray.length; i++) {
       var buttonContainerClass = 'grade-button-container-'+ gradeArray[i].toLowerCase().replace("_", "");
@@ -44,10 +50,14 @@ function createGradeButtons() {
       $( buttonContainer ).appendTo('div.grade-buttons');
       var gradeText = gradeArray[i].toLowerCase().replace("_", " ");
       createButton('btn btn-primary dropdown-toggle', gradeText, "dropdown", buttonContainerClass);
-      var gradeListClass = "grade-list-" + gradeArray[i].toLowerCase().replace("_", "");
-      var buttonList = "<ul class='dropdown-menu " + gradeListClass + "'></ul>";
-      $( buttonList ).appendTo('div.' + buttonContainerClass);
+      createSubjectListByGrade(gradeArray[i], buttonContainerClass);
     }
+}
+
+function createSubjectListByGrade(grade, containerClass) {
+    var gradeListClass = "grade-list-" + grade.toLowerCase().replace("_", "");
+    var buttonList = "<ul class='dropdown-menu " + gradeListClass + "'></ul>";
+    $( buttonList ).appendTo('div.' + containerClass);
 }
 
 function getSubjectObject() {

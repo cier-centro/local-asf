@@ -4,6 +4,7 @@ $(document).ready(function(){
     setGradeArray();
     console.log(paths);
     console.log(gradeArray);
+    createHomeButton();
     createGradeButtons();
     subjectObject = getSubjectObject();
     console.log(subjectObject);
@@ -30,6 +31,12 @@ function createSubjectLink(subject, grade) {
     createLink('', subjectText, linkButton, place);
 }
 
+function createHomeButton() {
+    var buttonContainerClass = 'home-button-container';
+    var buttonContainer = "<div class = '" + buttonContainerClass + "' style='display: inline-block;'></div>";
+    $( buttonContainer ).appendTo('div.grade-buttons');
+    createLink('btn btn-primary', "Inicio", "index.html", buttonContainerClass);
+}
 function createGradeButtons() {
     for (var i = 0; i < gradeArray.length; i++) {
       var buttonContainerClass = 'grade-button-container-'+ gradeArray[i].toLowerCase().replace("_", "");

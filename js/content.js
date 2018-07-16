@@ -19,12 +19,13 @@ function getBimesterArray() {
 }
 function createBimesterButtons() {
     for (var i = 0; i < bimesterArray.length; i++) {
-        var buttonContainerClass = 'bimester-button-container-'+ bimesterArray[i].replace("BIMESTRE_", "");
-        var buttonContainer = "<div class = '" + buttonContainerClass + "'></div>";
-        $( buttonContainer ).appendTo('div.bimester-buttons');
+        var buttonContainerClass = 'bimester-link-container-'+ bimesterArray[i].replace("BIMESTRE_", "");
+        var buttonContainer = (i == 0)? "<li class = 'active " : "<li class = '"
+        buttonContainer += buttonContainerClass + "'></li>";
+        $( buttonContainer ).appendTo('ul.bimester-pills');
         var bimesterText = bimesterArray[i].replace("_", " ").toLowerCase();
-        var linkButton = "#"; //getGradeURL(selectedSubject, gradeArray[i])
-        createLink('btn btn-primary', bimesterText, linkButton, buttonContainerClass);
+        var linkButton = "#bimester" + bimesterArray[i].replace("BIMESTRE_", ""); 
+        createLink('', bimesterText, linkButton, 'pill', 'li.' + buttonContainerClass);
     }
 }
 

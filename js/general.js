@@ -24,8 +24,8 @@ function createSubjectLink(subject, grade) {
     var gradeContainerClass = "grade-button-container-" + grade.toLowerCase().replace("_", "");
     var linkButton = getSubjectAndGradeURL(subject, grade);
     var subjectText = subject.toLowerCase();
-    var place = gradeContainerClass + " ."+ buttonContainerClass;
-    createLink('', subjectText, linkButton, place);
+    var place = 'div.' + gradeContainerClass + " ."+ buttonContainerClass;
+    createLink('', subjectText, linkButton, '', place);
 }
 
 function getSubjectLinkContainer(subject, grade) {
@@ -40,7 +40,7 @@ function createHomeButton() {
     var buttonContainerClass = 'home-button-container';
     var buttonContainer = "<div class = '" + buttonContainerClass + "' style='display: inline-block;'></div>";
     $( buttonContainer ).appendTo('div.grade-buttons');
-    createLink('btn btn-primary', "Inicio", "index.html", buttonContainerClass);
+    createLink('btn btn-primary', "Inicio", "index.html", '', 'div.' + buttonContainerClass);
 }
 
 function createGradeButtons() {
@@ -97,10 +97,11 @@ function createButton( buttonClass, text, dataToogle, buttonContainerClass) {
     }).appendTo( "div." + buttonContainerClass );
 }
 
-function createLink( buttonClass, text, link, buttonContainerClass) {
+function createLink( buttonClass, text, link, dataToogle, buttonContainerClass) {
     $('<a>',{
       class: buttonClass,
       text: text,
       href: link,
-    }).appendTo( 'div.' + buttonContainerClass );
+      "data-toggle": dataToogle,
+    }).appendTo( buttonContainerClass );
 }

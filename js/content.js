@@ -40,11 +40,11 @@ function createBimesterContentContainers(numberOfBimester, bimester, bimesterId)
 }
 
 function setBimesterContent(bimester, containerClass) {
-    var bimesterPanelGroup = getBimesterPanels();
+    var bimesterPanelGroup = getBimesterPanels(bimester);
     $( bimesterPanelGroup ).appendTo('div.' + containerClass);
 }
 
-function getBimesterPanels() {
+function getBimesterPanels(bimester) {
     var panelGroupClass = "panel-group";
     var panelGroup = "<div class='" + panelGroupClass + "'>";
     var panelClass = "panel panel-primary";
@@ -52,8 +52,8 @@ function getBimesterPanels() {
     var panelHeadingClass = "panel-heading";
     var panelHeading = "<div class='" + panelHeadingClass + "'>";
     var panelBodyClass = "panel-body";
-    var panelGuidesBody = "<div class='" + panelBodyClass + " guides-panel'>";
-    var panelVideosBody = "<div class='" + panelBodyClass + " videos-panel'>";
+    var panelGuidesBody = "<div class='" + panelBodyClass + " guides-panel-" + bimester.replace("BIMESTRE_", "") + "'>";
+    var panelVideosBody = "<div class='" + panelBodyClass + " videos-panel-" + bimester.replace("BIMESTRE_", "") + "'>";
     var endDiv = "</div>";
     var guidesPanel = panel + panelHeading + "Guías" + endDiv + panelGuidesBody + endDiv + endDiv;
     var videosPanel = panel + panelHeading + "Videos" + endDiv + panelVideosBody + endDiv + endDiv;

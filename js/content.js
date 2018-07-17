@@ -50,18 +50,29 @@ function setBimesterContent(bimester, containerClass) {
 }
 
 function createGuidesButtons(bimester) {
-    var guidesArray = [];
-    var bimesterNumber = bimester.replace("BIMESTRE_", "")
-    var bimesterKey = "BIM" + bimesterNumber;
+    var teacherGuidesArray = getGuideArrayBySort(bimester, "DOCENTE");
+    var studentGuidesArray = getGuideArrayBySort(bimester, "ESTUDIANTE");
+    createGuidesButtonsBySort(bimester, teacherGuidesArray, "DOCENTE");
+    createGuidesButtonsBySort(bimester, studentGuidesArray, "ESTUDIANTE");
+}
+
+function createGuidesButtonsBySort(bimester, sortArray, sort) {
+    var bimesterNumber = bimester.replace("BIMESTRE_", "");
     var guidesContainerClass = "guides-panel-" + bimesterNumber;
-    $.each(selectedArray, function(index, object) {
-        if ((isString(object)) && (object.includes(bimesterKey)))
-            guidesArray.push(object);
-    });
-    for (var i = 0; i < guidesArray.length; i++) {
-      var guideText = guidesArray[i].includes("DOCENTE")? "Guía Docente" : guidesArray[i].includes("ESTUDIANTE")? "Guía Estudiante" : "Guía";
+    for (var i = 0; i < sortArray.length; i++) {
+      var guideText = sort.includes("DOCENTE")? "Guía Docente" : sort.includes("ESTUDIANTE")? "Guía Estudiante" : "Guía";
       createButton('btn btn-primary btn-lg btn-guide-'+ bimesterNumber, guideText, "modal", "#myModal", guidesContainerClass);
     }
+}
+
+function getGuideArrayBySort(bimester, sort) {
+  var sortGuidesArray = [];
+  var bimesterKey = "BIM" + bimester.replace("BIMESTRE_", "");
+  $.each(selectedArray, function(index, object) {
+      if ( (isString(object)) && (object.includes(bimesterKey) || object.includes("COMPLETO")) && (object.includes(sort)))
+          sortGuidesArray.push(object);
+  });
+  return sortGuidesArray;
 }
 
 function isString(value) {

@@ -61,8 +61,25 @@ function createGuidesButtonsBySort(bimester, sortArray, sort) {
     var guidesContainerClass = "guides-panel-" + bimesterNumber;
     for (var i = 0; i < sortArray.length; i++) {
       var guideText = sort.includes("DOCENTE")? "Guía Docente" : sort.includes("ESTUDIANTE")? "Guía Estudiante" : "Guía";
-      createButton('btn btn-primary btn-lg btn-guide-'+ bimesterNumber, guideText, "modal", "#myModal", guidesContainerClass);
+      guideText += (i>0)? " " + (i+1) : "";
+      var guideID = sort.toLowerCase() + (i+1) + "_bim" + bimesterNumber;
+      createButton('btn btn-primary btn-lg btn-guide-'+ bimesterNumber, guideText, "modal", "#" + guideID, guidesContainerClass);
+      var modal = getModal(guideID, guideText, sortArray[i]);
+      $( modal ).appendTo('div.modals-container');
     }
+}
+
+function getModal(modalId, modalTitle, modalUrl) {
+    var modal = "<div class='modal fade' id='" + modalId + "' role='dialog'>";
+    var modalDialog = "<div class='modal-dialog modal-lg'>";
+    var modalContent = "<div class='modal-content'>";
+    var modalHeader = "<div class='modal-header'>";
+    var closeButton = "<button type='button' class='close' data-dismiss='modal'>&times;</button>";
+    var modalTitle = "<h4 class='modal-title'>" + modalTitle + "</h4>";
+    var modalBody = "<div class='modal-body'><p>Contenido: " + modalUrl + "</p>";
+    var endDiv = "</div>";
+    var completeModal = modal + modalDialog + modalContent + modalHeader + closeButton + modalTitle + endDiv + modalBody + endDiv + endDiv + endDiv + endDiv;
+    return completeModal;
 }
 
 function getGuideArrayBySort(bimester, sort) {

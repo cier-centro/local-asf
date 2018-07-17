@@ -7,12 +7,27 @@ $(document).ready(function(){
     bimesterArray = getBimesterArray();
     console.log(bimesterArray);
     createBimesterButtons();
+    pauseVideoAfterCloseModal();
 });
+
+function pauseVideoAfterCloseModal() {
+  $(function(){
+      $('.modal').modal({
+          show: false
+      }).on('hidden.bs.modal', function(){
+          if ($(this).find('video')[0]) {
+              $(this).find('video')[0].pause();
+          }
+      });
+  });
+}
+
 function getSelectedParametersArray() {
     var gradeObject = "GRADO_" + selectedGrade;
     var subjectObject = selectedSubject.toUpperCase();
     return paths[gradeObject][subjectObject];
 }
+
 function getBimesterArray() {
     var bimesterArray = [];
     var bimesterObject = selectedArray.VIDEOS;
@@ -21,6 +36,7 @@ function getBimesterArray() {
     });
     return bimesterArray;
 }
+
 function createBimesterButtons() {
     for (var i = 0; i < bimesterArray.length; i++) {
         var buttonContainerClass = 'bimester-link-container-'+ bimesterArray[i].replace("BIMESTRE_", "");

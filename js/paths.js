@@ -11,15 +11,15 @@ paths = {
                     "CIENCIAS_V08_[G07_CIE_I_19_VID_01].mp4"
                 ],
                 "BIMESTRE_2": [
-                    "CIENCIAS_V01_[G07_CIE_I_01_VID_01].mp4",
+                    "CIENCIAS_V02_[G07_CIE_I_01_VID_01].mp4",
                     "CIENCIAS_V08_[G07_CIE_I_19_VID_01].mp4"
                 ],
                 "BIMESTRE_3": [
-                    "CIENCIAS_V01_[G07_CIE_I_01_VID_01].mp4",
+                    "CIENCIAS_V04_[G07_CIE_I_01_VID_01].mp4",
                     "CIENCIAS_V08_[G07_CIE_I_19_VID_01].mp4"
                 ],
                 "BIMESTRE_4": [
-                    "CIENCIAS_V01_[G07_CIE_I_01_VID_01].mp4",
+                    "CIENCIAS_V05_[G07_CIE_I_01_VID_01].mp4",
                     "CIENCIAS_V08_[G07_CIE_I_19_VID_01].mp4"
                 ]
             }
@@ -38,12 +38,12 @@ paths = {
         "CIENCIAS": {
             "VIDEOS": {
                 "BIMESTRE_1": [
-                    "CIENCIAS_V01_[G07_CIE_I_01_VID_01].mp4",
-                    "CIENCIAS_V08_[G07_CIE_I_19_VID_01].mp4"
+                    "ASF9-Ciencias-01.mp4",
+                    "ASF9-Ciencias-02.mp4"
                 ],
                 "BIMESTRE_2": [
-                    "CIENCIAS_V01_[G07_CIE_I_01_VID_01].mp4",
-                    "CIENCIAS_V08_[G07_CIE_I_19_VID_01].mp4"
+                    "ASF9-Ciencias-09.mp4",
+                    "ASF9-Ciencias-10.mp4"
                 ]
             }
         },

@@ -47,6 +47,30 @@ function setBimesterContent(bimester, containerClass) {
     var bimesterPanelGroup = getBimesterPanels(bimester);
     $( bimesterPanelGroup ).appendTo('div.' + containerClass);
     createGuidesButtons(bimester);
+    createVideosButtons(bimester);
+}
+
+function createVideosButtons(bimester) {
+    var videosArray = getVideosArray(bimester);
+    var bimesterNumber = bimester.replace("BIMESTRE_", "");
+    var videosContainerClass = "videos-panel-" + bimesterNumber;
+    for (var i = 0; i < videosArray.length; i++) {
+      var videoText = getVideoName(videosArray[i]);
+      var videoID = videoText.replace(" ","") + "_bim" + bimesterNumber;
+      createButton('btn btn-primary btn-lg btn-video-'+ bimesterNumber, videoText, "modal", "#" + videoID, videosContainerClass);
+      /*var modal = getModal(guideID, guideText, sortArray[i]);
+      $( modal ).appendTo('div.modals-container');*/
+    }
+}
+
+function getVideoName(nameFile) {
+    nameFile = (selectedGrade == 7) ? nameFile.split("_")[1].replace("V","") : nameFile.split("-")[2].replace(".mp4","");
+    return "video " + nameFile;
+}
+
+function getVideosArray(bimester) {
+  var bimesterKey = "BIMESTRE_" + bimester.replace("BIMESTRE_", "");
+  return selectedArray["VIDEOS"][bimesterKey];
 }
 
 function createGuidesButtons(bimester) {

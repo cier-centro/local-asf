@@ -58,8 +58,8 @@ function createVideosButtons(bimester) {
       var videoText = getVideoName(videosArray[i]);
       var videoID = videoText.replace(" ","") + "_bim" + bimesterNumber;
       createButton('btn btn-primary btn-lg btn-video-'+ bimesterNumber, videoText, "modal", "#" + videoID, videosContainerClass);
-      /*var modal = getModal(guideID, guideText, sortArray[i]);
-      $( modal ).appendTo('div.modals-container');*/
+      var modal = getModal(videoID, videoText, videosArray[i], bimesterNumber, "VIDEO");
+      $( modal ).appendTo('div.modals-container');
     }
 }
 
@@ -88,27 +88,36 @@ function createGuidesButtonsBySort(bimester, sortArray, sort) {
       guideText += (i>0)? " " + (i+1) : "";
       var guideID = sort.toLowerCase() + (i+1) + "_bim" + bimesterNumber;
       createButton('btn btn-primary btn-lg btn-guide-'+ bimesterNumber, guideText, "modal", "#" + guideID, guidesContainerClass);
-      var modal = getModal(guideID, guideText, sortArray[i]);
+      var modal = getModal(guideID, guideText, sortArray[i], bimesterNumber, "GUIDE");
       $( modal ).appendTo('div.modals-container');
     }
 }
 
-function getModal(modalId, modalTitle, modalFile) {
+function getModal(modalId, modalTitle, modalFile, bimester, fileSort) {
     var modal = "<div class='modal fade' id='" + modalId + "' role='dialog'>";
     var modalDialog = "<div class='modal-dialog modal-lg'>";
     var modalContent = "<div class='modal-content'>";
     var modalHeader = "<div class='modal-header'>";
     var closeButton = "<button type='button' class='close' data-dismiss='modal'>&times;</button>";
     var modalTitle = "<h4 class='modal-title'>" + modalTitle + "</h4>";
-    var modalBody = "<div class='modal-body'>" + getModalContent(modalFile);
+    var modalBody = "<div class='modal-body'>" + getModalContent(modalFile, bimester, fileSort);
     var endDiv = "</div>";
     var completeModal = modal + modalDialog + modalContent + modalHeader + closeButton + modalTitle + endDiv + modalBody + endDiv + endDiv + endDiv + endDiv;
     return completeModal;
 }
 
-function getModalContent(file) {
-    pathFile = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/" + file;
-    return "<embed src='" + pathFile + "' width='100%' height='100%' />";
+function getModalContent(file, bimester, sort) {
+    var pathFile = "";
+    var content = "";
+    if (sort == "GUIDE") {
+        pathFile = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/" + file;
+        content = "<embed src='" + pathFile + "' width='100%' height='100%' />";
+    }
+    else {
+        pathFile = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/VIDEOS/BIMESTRE_" + bimester + "/" + file;
+        content = "<video width='100%' height='100%' controls><source src='" + pathFile + "' type='video/mp4'></video>";
+    }
+    return content;
 }
 
 function getGuideArrayBySort(bimester, sort) {

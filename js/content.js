@@ -86,7 +86,12 @@ function getVideoName(nameFile) {
 
 function getVideosArray(bimester) {
   var bimesterKey = "BIMESTRE_" + bimester.replace("BIMESTRE_", "");
-  return selectedArray["VIDEOS"][bimesterKey];
+  var videosArray = [];
+  $.each(selectedArray["VIDEOS"][bimesterKey], function(index, object) {
+      if ( (isString(object)) && (object.includes(".mp4")))
+          videosArray.push(object);
+  });
+  return videosArray;
 }
 
 function createGuidesButtons(bimester) {
@@ -140,7 +145,7 @@ function getGuideArrayBySort(bimester, sort) {
   var sortGuidesArray = [];
   var bimesterKey = "BIM" + bimester.replace("BIMESTRE_", "");
   $.each(selectedArray, function(index, object) {
-      if ( (isString(object)) && (object.includes(bimesterKey) || object.includes("COMPLETO")) && (object.includes(sort)))
+      if ( (isString(object)) && (object.includes(bimesterKey) || object.includes("COMPLETO")) && (object.includes(sort)) && (object.includes(".pdf")))
           sortGuidesArray.push(object);
   });
   return sortGuidesArray;

@@ -21,13 +21,15 @@ function pauseVideoAfterCloseModal() {
             }
         });
     });
-    $( ".modal-video-button" ).click(function() {
-        var modalId = $(this).data("target").replace("#","");
+    $( ".video-modal-button" ).click(function() {
+        var modalClass = $(this)[0].className;
         $.each(filesObject, function(index, object) {
-            if (index == modalId) {
-              var modal = "#" + modalId;
+            if (modalClass.includes(index)) {
+              var modal = ".video-modal";
+              $( modal + " h4" ).text( object.title );
               $( modal + " source" ).attr("src", object.url);
               $( modal + " video")[0].load();
+              return false;
             }
         });
     });
@@ -84,9 +86,7 @@ function createVideosButtons(bimester) {
     for (var i = 0; i < videosArray.length; i++) {
       var videoText = getVideoName(videosArray[i]);
       var videoID = videoText.replace(" ","") + "_bim" + bimesterNumber;
-      createButton('btn btn-primary btn-lg modal-video-button btn-video-'+ bimesterNumber, videoText, "modal", "#" + videoID, videosContainerClass);
-      var modal = getModal(videoID, videoText, videosArray[i], bimesterNumber, "VIDEO");
-      $( modal ).appendTo('div.modals-container');
+      createButton('btn btn-primary btn-lg video-modal-button btn-'+ videoID, videoText, "modal", "#videoModal", videosContainerClass);
       var videoUrl = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/VIDEOS/BIMESTRE_" + bimesterNumber + "/" + videosArray[i];
       if (filesObject[videoID] == undefined) {
           filesObject[videoID] = getFileObject(videoID, videoText, videoUrl);

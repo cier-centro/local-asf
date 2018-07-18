@@ -10,6 +10,8 @@ $(document).ready(function(){
     console.log(bimesterArray);
     createBimesterButtons();
     pauseVideoAfterCloseModal();
+    setFilesButtonsFunction("video");
+    setFilesButtonsFunction("guide");
 });
 
 function pauseVideoAfterCloseModal() {
@@ -22,29 +24,24 @@ function pauseVideoAfterCloseModal() {
             }
         });
     });
-    $( ".video-modal-button" ).click(function() {
-        var modalClass = $(this)[0].className;
-        $.each(videosFilesObject, function(index, object) {
-            if (modalClass.includes(index)) {
-              var modal = "#videoModal";
-              $( modal + " h4" ).text( object.title );
-              $( modal + " source" ).attr("src", object.url);
+}
+
+function setFilesButtonsFunction(sort) {
+  $( "."+ sort + "-modal-button" ).click(function() {
+      var modalClass = $(this)[0].className;
+      var filesObject = (sort == "video")? videosFilesObject : guidesFilesObject;
+      var srcElement = (sort == "video")? " source" : " embed";
+      $.each(filesObject, function(index, object) {
+          if (modalClass.includes(index)) {
+            var modal = "#" + sort + "Modal";
+            $( modal + " h4" ).text( object.title );
+            $( modal + srcElement ).attr("src", object.url);
+            if ($( modal + " video")[0])
               $( modal + " video")[0].load();
-              return false;
-            }
-        });
-    });
-    $( ".guide-modal-button" ).click(function() {
-        var modalClass = $(this)[0].className;
-        $.each(guidesFilesObject, function(index, object) {
-            if (modalClass.includes(index)) {
-              var modal = "#guideModal";
-              $( modal + " h4" ).text( object.title );
-              $( modal + " embed" ).attr("src", object.url);
-              return false;
-            }
-        });
-    });
+            return false;
+          }
+      });
+  });
 }
 
 function getSelectedParametersArray() {

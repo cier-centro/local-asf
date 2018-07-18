@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    filesObject = {};
     selectedSubject = getAllUrlParams().sbj;
     selectedGrade = getAllUrlParams().grd;
     selectedArray = getSelectedParametersArray();
@@ -11,15 +12,25 @@ $(document).ready(function(){
 });
 
 function pauseVideoAfterCloseModal() {
-  $(function(){
-      $('.modal').modal({
-          show: false
-      }).on('hidden.bs.modal', function(){
-          if ($(this).find('video')[0]) {
-              $(this).find('video')[0].pause();
-          }
-      });
-  });
+    $(function(){
+        $('.modal').modal({
+            show: false
+        }).on('hidden.bs.modal', function(){
+            if ($(this).find('video')[0]) {
+                $(this).find('video')[0].pause();
+            }
+        });
+    });
+    $( ".modal-video-button" ).click(function() {
+        var modalId = $(this).data("target").replace("#","");
+        $.each(filesObject, function(index, object) {
+            if (index == modalId) {
+              var modal = "#" + modalId;
+              $( modal + " source" ).attr("src", object.url);
+              $( modal + " video")[0].load();
+            }
+        });
+    });
 }
 
 function getSelectedParametersArray() {
@@ -73,10 +84,23 @@ function createVideosButtons(bimester) {
     for (var i = 0; i < videosArray.length; i++) {
       var videoText = getVideoName(videosArray[i]);
       var videoID = videoText.replace(" ","") + "_bim" + bimesterNumber;
-      createButton('btn btn-primary btn-lg btn-video-'+ bimesterNumber, videoText, "modal", "#" + videoID, videosContainerClass);
+      createButton('btn btn-primary btn-lg modal-video-button btn-video-'+ bimesterNumber, videoText, "modal", "#" + videoID, videosContainerClass);
       var modal = getModal(videoID, videoText, videosArray[i], bimesterNumber, "VIDEO");
       $( modal ).appendTo('div.modals-container');
+      var videoUrl = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/VIDEOS/BIMESTRE_" + bimesterNumber + "/" + videosArray[i];
+      if (filesObject[videoID] == undefined) {
+          filesObject[videoID] = getFileObject(videoID, videoText, videoUrl);
+      }
     }
+}
+
+function getFileObject(id, title, url) {
+    var file = {
+      id: id,
+      title: title,
+      url: url,
+    };
+    return file;
 }
 
 function getVideoName(nameFile) {
@@ -135,7 +159,6 @@ function getModalContent(file, bimester, sort) {
         content = "<embed src='" + pathFile + "' width='100%' height='100%' />";
     }
     else {
-        pathFile = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/VIDEOS/BIMESTRE_" + bimester + "/" + file;
         content = "<video width='100%' height='100%' controls><source src='" + pathFile + "' type='video/mp4'></video>";
     }
     return content;

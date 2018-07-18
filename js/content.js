@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    filesObject = {};
+    guidesFilesObject = {};
+    videosFilesObject = {};
     selectedSubject = getAllUrlParams().sbj;
     selectedGrade = getAllUrlParams().grd;
     selectedArray = getSelectedParametersArray();
@@ -23,12 +24,23 @@ function pauseVideoAfterCloseModal() {
     });
     $( ".video-modal-button" ).click(function() {
         var modalClass = $(this)[0].className;
-        $.each(filesObject, function(index, object) {
+        $.each(videosFilesObject, function(index, object) {
             if (modalClass.includes(index)) {
-              var modal = ".video-modal";
+              var modal = "#videoModal";
               $( modal + " h4" ).text( object.title );
               $( modal + " source" ).attr("src", object.url);
               $( modal + " video")[0].load();
+              return false;
+            }
+        });
+    });
+    $( ".guide-modal-button" ).click(function() {
+        var modalClass = $(this)[0].className;
+        $.each(guidesFilesObject, function(index, object) {
+            if (modalClass.includes(index)) {
+              var modal = "#guideModal";
+              $( modal + " h4" ).text( object.title );
+              $( modal + " embed" ).attr("src", object.url);
               return false;
             }
         });
@@ -88,8 +100,8 @@ function createVideosButtons(bimester) {
       var videoID = videoText.replace(" ","") + "_bim" + bimesterNumber;
       createButton('btn btn-primary btn-lg video-modal-button btn-'+ videoID, videoText, "modal", "#videoModal", videosContainerClass);
       var videoUrl = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/VIDEOS/BIMESTRE_" + bimesterNumber + "/" + videosArray[i];
-      if (filesObject[videoID] == undefined) {
-          filesObject[videoID] = getFileObject(videoID, videoText, videoUrl);
+      if (videosFilesObject[videoID] == undefined) {
+          videosFilesObject[videoID] = getFileObject(videoID, videoText, videoUrl);
       }
     }
 }
@@ -132,36 +144,12 @@ function createGuidesButtonsBySort(bimester, sortArray, sort) {
       var guideText = sort.includes("DOCENTE")? "Guía Docente" : sort.includes("ESTUDIANTE")? "Guía Estudiante" : "Guía";
       guideText += (i>0)? " " + (i+1) : "";
       var guideID = sort.toLowerCase() + (i+1) + "_bim" + bimesterNumber;
-      createButton('btn btn-primary btn-lg btn-guide-'+ bimesterNumber, guideText, "modal", "#" + guideID, guidesContainerClass);
-      var modal = getModal(guideID, guideText, sortArray[i], bimesterNumber, "GUIDE");
-      $( modal ).appendTo('div.modals-container');
+      createButton('btn btn-primary btn-lg guide-modal-button btn-guide-'+ guideID, guideText, "modal", "#guideModal", guidesContainerClass);
+      var guideUrl = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/" + sortArray[i];
+      if (guidesFilesObject[guideID] == undefined) {
+          guidesFilesObject[guideID] = getFileObject(guideID, guideText, guideUrl);
+      }
     }
-}
-
-function getModal(modalId, modalTitle, modalFile, bimester, fileSort) {
-    var modal = "<div class='modal fade' id='" + modalId + "' role='dialog'>";
-    var modalDialog = "<div class='modal-dialog modal-lg'>";
-    var modalContent = "<div class='modal-content'>";
-    var modalHeader = "<div class='modal-header'>";
-    var closeButton = "<button type='button' class='close' data-dismiss='modal'>&times;</button>";
-    var modalTitle = "<h4 class='modal-title'>" + modalTitle + "</h4>";
-    var modalBody = "<div class='modal-body'>" + getModalContent(modalFile, bimester, fileSort);
-    var endDiv = "</div>";
-    var completeModal = modal + modalDialog + modalContent + modalHeader + closeButton + modalTitle + endDiv + modalBody + endDiv + endDiv + endDiv + endDiv;
-    return completeModal;
-}
-
-function getModalContent(file, bimester, sort) {
-    var pathFile = "";
-    var content = "";
-    if (sort == "GUIDE") {
-        pathFile = "AULAS_SIN_FRONTERAS/GRADO_" + selectedGrade + "/" + selectedSubject.toUpperCase() + "/" + file;
-        content = "<embed src='" + pathFile + "' width='100%' height='100%' />";
-    }
-    else {
-        content = "<video width='100%' height='100%' controls><source src='" + pathFile + "' type='video/mp4'></video>";
-    }
-    return content;
 }
 
 function getGuideArrayBySort(bimester, sort) {

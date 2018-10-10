@@ -1,4 +1,109 @@
 /*----------------------------------
 ---------------Main Menu------------
 ------------------------------------*/
-.main-menu {}
+
+%main-menu-button {
+  height: 172px;
+  width: 172px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: relative;
+  font-family: 'Montserrat-Medium';
+  font-size: 1em;
+  padding-top: 20px;
+}
+
+%main-menu-button-hover {
+  background-color: rgba($header-color1, 0.25);
+}
+
+.main-menu {
+  background-color: $main-menu-bg;
+
+  .grade-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grade-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid rgba($header-color1, 0.2);
+    border-radius: 200px;
+  }
+
+  .home-button-container {
+    .btn-primary {
+      @extend %main-menu-button;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("#{$images-path}img-menu-home.png") no-repeat center 60% /50% auto;
+      }
+
+      &:hover {
+        @extend %main-menu-button-hover;
+      }
+    }
+  }
+
+  .open > .dropdown-toggle.btn-primary:focus {
+    background-color: rgba($header-color1, 0.5);
+  }
+
+  .dropdown {
+    .btn {
+      padding-bottom: 80%;
+      @extend %main-menu-button;
+
+      &:after {
+        position: absolute;
+        font-family: 'Montserrat-Medium';
+        font-size: 5.5em;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 20px;
+      }
+
+      &:hover {
+        @extend %main-menu-button-hover;
+      }
+    }
+  }
+
+  .grade-button-container-grado7 {
+    .btn {
+      &:after {
+        content: "7";
+      }
+    }
+  }
+
+  .grade-button-container-grado8 {
+    .btn {
+      &:after {
+        content: "8";
+      }
+    }
+  }
+
+  .grade-button-container-grado9 {
+    .btn {
+      &:after {
+        content: "9";
+      }
+    }
+  }
+}

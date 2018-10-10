@@ -1,0 +1,42 @@
+/**
+ * Mixins
+ * --------------------------------------------------
+ */
+@mixin transition-properties($values) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -ms-transition: $values;
+  -o-transition: $values;
+  transition: $values;
+}
+@mixin border-radius-properties($value) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  -ms-border-radius: $value;
+  border-radius: $value;
+}
+@mixin box-shadow-properties($value) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+@mixin background-button-properties($color1, $color2) {
+  background: $color1 !important;
+  background: -moz-linear-gradient(top, $color1 0%, $color2 100%) !important;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2)) !important;
+  background: -webkit-linear-gradient(top, $color1 0%, $color2 100%) !important;
+  background: -o-linear-gradient(top, $color1 0%, $color2 100%) !important;
+  background: -ms-linear-gradient(top, $color1 0%, $color2 100%) !important;
+  background: linear-gradient(to bottom, $color1 0%, $color2 100%) !important;
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1}', endColorstr='#{$color2}', GradientType=0 ) !important;
+}
+@mixin background-gradient-properties($color1, $color2) {
+  background-image: url("#{$images-path}img-bg-pattern.png"), $color1;
+  background-image: url("#{$images-path}img-bg-pattern.png"), -moz-linear-gradient(left, $color1 0%, $color1 15%, $color2 85%, $color2 100%);
+  background-image: url("#{$images-path}img-bg-pattern.png"), -webkit-gradient(left top, right top, color-stop(0%, $color1), color-stop(15%, $color1), color-stop(85%, $color2), color-stop(100%, $color2));
+  background-image: url("#{$images-path}img-bg-pattern.png"), -webkit-linear-gradient(left, $color1 0%, $color1 15%, $color2 85%, $color2 100%);
+  background-image: url("#{$images-path}img-bg-pattern.png"), -o-linear-gradient(left, $color1 0%, $color1 15%, $color2 85%, $color2 100%);
+  background-image: url("#{$images-path}img-bg-pattern.png"), -ms-linear-gradient(left, $color1 0%, $color1 15%, $color2 85%, $color2 100%);
+  background-image: url("#{$images-path}img-bg-pattern.png"), linear-gradient(to right, $color1 0%, $color1 15%, $color2 85%, $color2 100%);
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1}', endColorstr='#{$color2}', GradientType=1 );
+}

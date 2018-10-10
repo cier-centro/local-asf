@@ -1,62 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <title>ASF Local</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/paths.js"></script>
   <script src="js/general.js"></script>
   <script src="js/content.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Página de contenidos</h1>
-        <div class="grade-buttons">
+  <div class="header">
+    <div class="container-fluid">
+      <div class="row header-first-row">
+        <div class="col-sm-7">
+          <img src="images/img-sitetitle.png" class="img-responsive row site-title">
         </div>
-        <h1 class="main-title"></h1>
-        <h2 class="grade-title"></h2>
-        <ul class="nav nav-pills bimester-pills">
-        </ul>
-        <div class="tab-content bimester-content">
+        <div class="col-sm-5 header-logo-container">
+          <img src="images/logo-header.png" class="img-responsive row">
         </div>
-        <div class="modals-container">
-            <div class="modal fade" id="videoModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">
-                              &times;
-                            </button>
-                            <h4 class="modal-title">
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            <video width="100%" height="100%" controls autoplay>
-                                <source src="" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="guideModal" role="dialog">
-                  <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">
-                                &times;
-                              </button>
-                              <h4 class="modal-title">
-                              </h4>
-                          </div>
-                          <div class="modal-body">
-                            <embed src="" width="100%" height="100%" />
-                          </div>
-                      </div>
-                  </div>
-              </div>
-        </div>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <h1>Página de contenidos</h1>
+    <div class="grade-buttons">
+    </div>
+    <h1 class="main-title"></h1>
+    <h2 class="grade-title"></h2>
+    <ul class="nav nav-pills bimester-pills">
+    </ul>
+    <div class="tab-content bimester-content">
+    </div>
+    <div class="modals-container">
+      <div class="modal fade" id="videoModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title">
+              </h4>
+            </div>
+            <div class="modal-body">
+              <video width="100%" height="100%" controls autoplay>
+                <source src="" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="guideModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title">
+              </h4>
+            </div>
+            <div class="modal-body">
+              <embed src="" width="100%" height="100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="two-logo-container">
+        <div class="logo-container">
+          <img src="images/logo-gobcol.png" class="img-responsive">
+        </div>
+        <div class="logo-container">
+          <img src="images/logo-minedu.png" class="img-responsive">
+        </div>
+      </div>
+      <div class="two-logo-container">
+        <div class="logo-container">
+          <img src="images/logo-pca.png" class="img-responsive">
+        </div>
+        <div class="logo-container">
+          <img src="images/logo-asf.png" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>

@@ -1,0 +1,14 @@
+estando en -> cd C:\xampp\htdocs\oim-saber11\interfaz-disco-duro
+ejecutar -> sass --watch scss/style.scss:css/style.css
+
+
+desde casa -> cd C:\xampp\htdocs\local-asf
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ruta pull al servidor
+
+
+cd var/www/html/oim-saber11/interfaz-disco-duro

@@ -1,0 +1,61 @@
+/*----------------------------------
+----------------Modal--------------
+------------------------------------*/
+.modal-dialog {
+  margin-top: 140px;
+}
+
+.btn-modal {
+  background-color: white;
+  color: $heading-color !important;
+  font-size: 1.18em;
+  font-weight: 600;
+  border-radius: 25px;
+}
+
+.close-container {
+  text-align: right;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-title {
+  padding: 0 40px 7px;
+  color: $heading-color;
+  font-size: 1.87em;
+  text-align: center;
+  font-family: 'Montserrat-Medium';
+  position: relative;
+
+  big {
+    display: block;
+  }
+
+  &:after {
+    @extend %purple-underline;
+  }
+}
+
+button.close {
+  float: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  opacity: 1;
+  color: white;
+  font-size: 2.5em;
+  font-family: 'Montserrat-Medium';
+  @include background-gradient-properties($cpa-color, $red-menu-color);
+}
+
+.modal-body {
+  line-height: 200%;
+  padding: 15px 40px;
+}
+
+.modal-backdrop.in {
+  opacity: 0.8;
+  background-color: $modal-backdrop-bg;
+}

@@ -252,7 +252,9 @@ button.close {
 .modal-body {
   line-height: 200%;
   padding: 15px 40px; }
-  .modal-body embed {
+  .modal-body embed,
+  .modal-body iframe,
+  .modal-body object {
     height: 30vw; }
 
 .modal-backdrop.in {

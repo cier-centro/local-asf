@@ -32,7 +32,7 @@ function setFilesButtonsFunction(sort) {
   $("." + sort + "-modal-button").click(function() {
     var modalClass = $(this)[0].className;
     var filesObject = (sort == "video") ? videosFilesObject : guidesFilesObject;
-    var srcElement = (sort == "video") ? " source" : " embed";
+    var srcElement = (sort == "video") ? " source" : " iframe";
     $.each(filesObject, function(index, object) {
       if (isInString(modalClass, index)) {
         var modal = "#" + sort + "Modal";

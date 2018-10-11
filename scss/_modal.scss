@@ -55,7 +55,9 @@ button.close {
   line-height: 200%;
   padding: 15px 40px;
 
-  embed {
+  embed,
+  iframe,
+  object {
     height: 30vw;
   }
 }

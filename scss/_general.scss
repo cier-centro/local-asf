@@ -32,3 +32,156 @@ a {
   margin: auto;
   border: 1px solid $heading-color;
 }
+
+.subject-content {
+  .titles-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    .main-title {
+      font-family: 'Montserrat-Bold';
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+
+    .grade-title {
+      font-family: 'Montserrat-Bold';
+      margin-left: 20px;
+    }
+
+    .grade-label {
+      color: white;
+      font-size: 1.5em;
+      font-family: 'Montserrat-SemiBold';
+    }
+  }
+
+  .pills-container {
+    margin-bottom: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
+  }
+
+  .bimester-pills {
+    a {
+      border-radius: 100px;
+      text-transform: capitalize;
+      color: white;
+    }
+
+    .active {
+      a {
+        background-color: rgba(black, 0.5) !important;
+      }
+    }
+  }
+
+  &.matematicas {
+    .titles-container {
+      background: $maths-banner-bg url("#{$images-path}img-maths-pattern-bg.png") no-repeat center / cover;
+    }
+
+    .grade-title,
+    .main-title {
+      color: $maths-banner-tx;
+    }
+
+    .pills-container {
+      background-color: $maths-pills-container-bg;
+    }
+
+    .bimester-pills {
+      a {
+        background-color: $maths-banner-bg;
+
+        &:hover {
+          background-color: $maths-banner-tx;
+          color: black;
+        }
+      }
+    }
+  }
+
+  &.ciencias {
+    .titles-container {
+      background: $science-banner-bg url("#{$images-path}img-science-pattern-bg.png") no-repeat center / cover;
+    }
+
+    .grade-title,
+    .main-title {
+      color: $science-banner-tx;
+    }
+
+    .pills-container {
+      background-color: $science-pills-container-bg;
+    }
+
+    .bimester-pills {
+      a {
+        background-color: $science-banner-bg;
+
+        &:hover {
+          background-color: $science-banner-tx;
+          color: black;
+        }
+      }
+    }
+  }
+
+  &.sociales {
+    .titles-container {
+      background: $social-banner-bg url("#{$images-path}img-social-pattern-bg.png") no-repeat center / cover;
+    }
+
+    .grade-title,
+    .main-title {
+      color: $social-banner-tx;
+    }
+
+    .pills-container {
+      background-color: $social-pills-container-bg;
+    }
+
+    .bimester-pills {
+      a {
+        background-color: $social-banner-bg;
+
+        &:hover {
+          background-color: $social-banner-tx;
+          color: black;
+        }
+      }
+    }
+  }
+
+  &.lenguaje {
+    .titles-container {
+      background: $language-banner-bg url("#{$images-path}img-language-pattern-bg.png") no-repeat center / cover;
+    }
+
+    .grade-title,
+    .main-title {
+      color: $language-banner-tx;
+    }
+
+    .pills-container {
+      background-color: $language-pills-container-bg;
+    }
+
+    .bimester-pills {
+      a {
+        background-color: $language-banner-bg;
+
+        &:hover {
+          background-color: $language-banner-tx;
+          color: black;
+        }
+      }
+    }
+  }
+}

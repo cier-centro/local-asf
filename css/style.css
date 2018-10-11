@@ -24,6 +24,11 @@
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/montserrat/Montserrat-Bold.ttf"); }
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat/Montserrat-SemiBold.ttf"); }
 /*----------------------------------
 ----------------General--------------
 ------------------------------------*/
@@ -52,6 +57,84 @@ a {
   height: 0;
   margin: auto;
   border: 1px solid #2f296e; }
+
+.subject-content .titles-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px; }
+  .subject-content .titles-container .main-title {
+    font-family: 'Montserrat-Bold';
+    text-transform: capitalize;
+    margin-bottom: 0; }
+  .subject-content .titles-container .grade-title {
+    font-family: 'Montserrat-Bold';
+    margin-left: 20px; }
+  .subject-content .titles-container .grade-label {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Montserrat-SemiBold'; }
+.subject-content .pills-container {
+  margin-bottom: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px; }
+.subject-content .bimester-pills a {
+  border-radius: 100px;
+  text-transform: capitalize;
+  color: white; }
+.subject-content .bimester-pills .active a {
+  background-color: rgba(0, 0, 0, 0.5) !important; }
+.subject-content.matematicas .titles-container {
+  background: #005EA9 url("../images/img-maths-pattern-bg.png") no-repeat center/cover; }
+.subject-content.matematicas .grade-title,
+.subject-content.matematicas .main-title {
+  color: #A3DAF7; }
+.subject-content.matematicas .pills-container {
+  background-color: #3779B9; }
+.subject-content.matematicas .bimester-pills a {
+  background-color: #005EA9; }
+  .subject-content.matematicas .bimester-pills a:hover {
+    background-color: #A3DAF7;
+    color: black; }
+.subject-content.ciencias .titles-container {
+  background: #25833C url("../images/img-science-pattern-bg.png") no-repeat center/cover; }
+.subject-content.ciencias .grade-title,
+.subject-content.ciencias .main-title {
+  color: #B4D06C; }
+.subject-content.ciencias .pills-container {
+  background-color: #72A66C; }
+.subject-content.ciencias .bimester-pills a {
+  background-color: #25833C; }
+  .subject-content.ciencias .bimester-pills a:hover {
+    background-color: #B4D06C;
+    color: black; }
+.subject-content.sociales .titles-container {
+  background: #D54308 url("../images/img-social-pattern-bg.png") no-repeat center/cover; }
+.subject-content.sociales .grade-title,
+.subject-content.sociales .main-title {
+  color: #FCD38E; }
+.subject-content.sociales .pills-container {
+  background-color: #DF6E3C; }
+.subject-content.sociales .bimester-pills a {
+  background-color: #D54308; }
+  .subject-content.sociales .bimester-pills a:hover {
+    background-color: #FCD38E;
+    color: black; }
+.subject-content.lenguaje .titles-container {
+  background: #A92139 url("../images/img-language-pattern-bg.png") no-repeat center/cover; }
+.subject-content.lenguaje .grade-title,
+.subject-content.lenguaje .main-title {
+  color: #F7C6C6; }
+.subject-content.lenguaje .pills-container {
+  background-color: #C45258; }
+.subject-content.lenguaje .bimester-pills a {
+  background-color: #A92139; }
+  .subject-content.lenguaje .bimester-pills a:hover {
+    background-color: #F7C6C6;
+    color: black; }
 
 /*----------------------------------
 ----------------Header--------------
@@ -330,6 +413,14 @@ button.close {
   .header .header-logo-container .img-responsive {
     max-width: 25vw; }
 
+  .subject-content .main-title {
+    font-size: 2.75em; }
+  .subject-content .grade-title {
+    font-size: 9.5em; }
+  .subject-content .bimester-pills {
+    display: flex;
+    justify-content: space-around; }
+
   .footer .container {
     display: flex;
     align-items: center;
@@ -347,6 +438,15 @@ button.close {
   .header .header-logo-container .img-responsive {
     max-width: 60vw;
     margin: 15px -15px; }
+
+  .subject-content .main-title {
+    font-size: 2em; }
+  .subject-content .grade-title {
+    font-size: 5em; }
+  .subject-content .bimester-pills li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px; }
 
   .footer .container {
     text-align: center; }

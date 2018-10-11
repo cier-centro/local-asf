@@ -4,6 +4,7 @@ $(document).ready(function() {
   selectedSubject = getAllUrlParams().sbj;
   selectedGrade = getAllUrlParams().grd;
   selectedArray = getSelectedParametersArray();
+  $(".subject-content").addClass(selectedSubject);
   $("h1.main-title").text(selectedSubject);
   $("h2.grade-title").text(selectedGrade);
   bimesterArray = getBimesterArray();

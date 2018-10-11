@@ -19,6 +19,21 @@
     }
   }
 
+  .subject-content {
+    .main-title {
+      font-size: 2.75em;
+    }
+
+    .grade-title {
+      font-size: 9.5em;
+    }
+
+    .bimester-pills {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
   .footer {
     .container {
       display: flex;
@@ -47,6 +62,24 @@
       .img-responsive {
         max-width: 60vw;
         margin: 15px -15px;
+      }
+    }
+  }
+
+  .subject-content {
+    .main-title {
+      font-size: 2em;
+    }
+
+    .grade-title {
+      font-size: 5em;
+    }
+
+    .bimester-pills {
+      li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
       }
     }
   }

@@ -1,6 +1,7 @@
 /*----------------------------------
 ----------------Modal--------------
 ------------------------------------*/
+
 .modal-dialog {
   margin-top: 140px;
 }
@@ -53,6 +54,10 @@ button.close {
 .modal-body {
   line-height: 200%;
   padding: 15px 40px;
+
+  embed {
+    height: 30vw;
+  }
 }
 
 .modal-backdrop.in {

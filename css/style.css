@@ -136,6 +136,56 @@ a {
     background-color: #F7C6C6;
     color: black; }
 
+.bimester-content .panel {
+  border-radius: 15px;
+  padding: 10px;
+  border: none;
+  margin: 30px 0;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); }
+  .bimester-content .panel .panel-heading {
+    font-family: 'Montserrat-Medium';
+    font-size: 1.4em;
+    background: transparent;
+    color: #162873; }
+  .bimester-content .panel .guide-modal-button,
+  .bimester-content .panel .video-modal-button {
+    background-color: white;
+    border: 2px solid #162873;
+    border-top-left-radius: 0;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 0;
+    font-family: 'Montserrat-Medium';
+    color: #162873;
+    font-size: 1em;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 65px;
+    height: 55px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .bimester-content .panel .guide-modal-button:hover,
+    .bimester-content .panel .video-modal-button:hover {
+      background-color: rgba(22, 40, 115, 0.5);
+      color: white; }
+    .bimester-content .panel .guide-modal-button:after,
+    .bimester-content .panel .video-modal-button:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 55px; }
+  .bimester-content .panel .guide-modal-button:after {
+    background: #162873 url("../images/img-pdf-icon.png") no-repeat center/60% auto; }
+  .bimester-content .panel .video-modal-button:after {
+    background: #162873 url("../images/img-video-icon.png") no-repeat center/70% auto; }
+
 /*----------------------------------
 ----------------Header--------------
 ------------------------------------*/
@@ -202,6 +252,8 @@ button.close {
 .modal-body {
   line-height: 200%;
   padding: 15px 40px; }
+  .modal-body embed {
+    height: 30vw; }
 
 .modal-backdrop.in {
   opacity: 0.8;
@@ -403,6 +455,21 @@ button.close {
 /*----------------------------------
 --------------Media Query-----------
 ------------------------------------*/
+@media screen and (min-width: 1200px) {
+  .bimester-content .guide-modal-button,
+  .bimester-content .video-modal-button {
+    width: 23%;
+    margin-right: 2%; } }
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .bimester-content .guide-modal-button,
+  .bimester-content .video-modal-button {
+    width: 31%;
+    margin-right: 2%; } }
+@media screen and (min-width: 550px) and (max-width: 991px) {
+  .bimester-content .guide-modal-button,
+  .bimester-content .video-modal-button {
+    width: 48%;
+    margin-right: 2%; } }
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px; }
@@ -465,6 +532,10 @@ button.close {
     .footer .two-logo-container:first-child {
       margin-bottom: 30px; } }
 @media screen and (max-width: 549px) {
+  .bimester-content .guide-modal-button,
+  .bimester-content .video-modal-button {
+    width: 100%; }
+
   .footer .two-logo-container .img-responsive {
     display: block;
     margin-bottom: 40px; }

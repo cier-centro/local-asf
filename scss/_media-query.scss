@@ -1,6 +1,33 @@
 /*----------------------------------
 --------------Media Query-----------
 ------------------------------------*/
+@media screen and (min-width: 1200px) {
+  .bimester-content {
+    .guide-modal-button,
+    .video-modal-button {
+      width: 23%;
+      margin-right: 2%;
+    }
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .bimester-content {
+    .guide-modal-button,
+    .video-modal-button {
+      width: 31%;
+      margin-right: 2%;
+    }
+  }
+}
+@media screen and (min-width: 550px) and (max-width:991px) {
+  .bimester-content {
+    .guide-modal-button,
+    .video-modal-button {
+      width: 48%;
+      margin-right: 2%;
+    }
+  }
+}
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
@@ -116,6 +143,13 @@
   }
 }
 @media screen and (max-width: 549px) {
+  .bimester-content {
+    .guide-modal-button,
+    .video-modal-button {
+      width: 100%;
+    }
+  }
+
   .footer {
     .two-logo-container {
       .img-responsive {

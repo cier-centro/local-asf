@@ -32,7 +32,7 @@ function setFilesButtonsFunction(sort) {
       var filesObject = (sort == "video")? videosFilesObject : guidesFilesObject;
       var srcElement = (sort == "video")? " source" : " embed";
       $.each(filesObject, function(index, object) {
-          if (modalClass.includes(index)) {
+          if (modalClass.indexOf(index)) {
             var modal = "#" + sort + "Modal";
             $( modal + " h4" ).text( object.title );
             $( modal + srcElement ).attr("src", object.url);
@@ -121,7 +121,7 @@ function getVideosArray(bimester) {
   var bimesterKey = "BIMESTRE_" + bimester.replace("BIMESTRE_", "");
   var videosArray = [];
   $.each(selectedArray["VIDEOS"][bimesterKey], function(index, object) {
-      if ( (isString(object)) && (object.includes(".mp4")))
+      if ( (isString(object)) && (object.indexOf(".mp4")))
           videosArray.push(object);
   });
   return videosArray;
@@ -138,7 +138,7 @@ function createGuidesButtonsBySort(bimester, sortArray, sort) {
     var bimesterNumber = bimester.replace("BIMESTRE_", "");
     var guidesContainerClass = "guides-panel-" + bimesterNumber;
     for (var i = 0; i < sortArray.length; i++) {
-      var guideText = sort.includes("DOCENTE")? "Guía Docente" : sort.includes("ESTUDIANTE")? "Guía Estudiante" : "Guía";
+      var guideText = sort.indexOf("DOCENTE")? "Guía Docente" : sort.indexOf("ESTUDIANTE")? "Guía Estudiante" : "Guía";
       guideText += (i>0)? " " + (i+1) : "";
       var guideID = sort.toLowerCase() + (i+1) + "_bim" + bimesterNumber;
       createButton('btn btn-primary btn-lg guide-modal-button btn-guide-'+ guideID, guideText, "modal", "#guideModal", guidesContainerClass);
@@ -153,7 +153,7 @@ function getGuideArrayBySort(bimester, sort) {
   var sortGuidesArray = [];
   var bimesterKey = "BIM" + bimester.replace("BIMESTRE_", "");
   $.each(selectedArray, function(index, object) {
-      if ( (isString(object)) && (object.includes(bimesterKey) || object.includes("COMPLETO")) && (object.includes(sort)) && (object.includes(".pdf")))
+      if ( (isString(object)) && (object.indexOf(bimesterKey) || object.indexOf("COMPLETO")) && (object.indexOf(sort)) && (object.indexOf(".pdf")))
           sortGuidesArray.push(object);
   });
   return sortGuidesArray;

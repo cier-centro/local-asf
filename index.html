@@ -1,60 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-  <title>ASF Local</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/paths.js"></script>
-  <script src="js/general.js"></script>
-  <script src="js/index.js"></script>
-</head>
+  <head>
+    <title>ASF Local</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/paths.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/index.js"></script>
+  </head>
 
-<body>
-  <div class="header">
-    <div class="container-fluid">
-      <div class="row header-first-row">
-        <div class="col-sm-7">
-          <img src="images/img-sitetitle.png" class="img-responsive row site-title">
-        </div>
-        <div class="col-sm-5 header-logo-container">
-          <img src="images/logo-header.png" class="img-responsive row">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid main-menu">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 grade-buttons-container">
-          <div class="grade-buttons">
+  <body>
+    <div class="header">
+      <div class="container-fluid">
+        <div class="row header-first-row">
+          <div class="col-sm-7">
+            <img src="images/img-sitetitle.png" class="img-responsive row site-title">
+          </div>
+          <div class="col-sm-5 header-logo-container">
+            <img src="images/logo-header.png" class="img-responsive row">
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
-    <div class="container">
-      <div class="two-logo-container">
-        <div class="logo-container">
-          <img src="images/logo-gobcol.png" class="img-responsive">
-        </div>
-        <div class="logo-container">
-          <img src="images/logo-minedu.png" class="img-responsive">
-        </div>
-      </div>
-      <div class="two-logo-container">
-        <div class="logo-container">
-          <img src="images/logo-pca.png" class="img-responsive">
-        </div>
-        <div class="logo-container">
-          <img src="images/logo-asf.png" class="img-responsive">
+    <div class="container-fluid main-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 grade-buttons-container">
+            <div class="grade-buttons"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+    <div class="container-fluid home-videos">
+      <div class="container">
+        <div class="row video-buttons-container">
+          <div class="col-sm-6">
+            <h1>¿Qué es Aulas sin fronteras?</h1>
+            <button id="video_asf1" type="button" class="btn btn-default btn-lg btn-video" data-toggle="modal" data-target="#md-asf-home-video">
+              <div class="embed-responsive embed-responsive-16by9 red"></div>
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <h1>¿Cómo funciona esta interfaz?</h1>
+            <button id="video_asf2" type="button" class="btn btn-default btn-lg btn-video" data-toggle="modal" data-target="#md-asf-home-video">
+              <div class="embed-responsive embed-responsive-16by9 green"></div>
+            </button>
+          </div>
+          <div class="modal fade" id="md-asf-home-video" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="close-container">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                  <video id="asf-home-video" class="embed-responsive-item" autoplay="autoplay" controls="controls" width="100%">
+                    <source type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="two-logo-container">
+          <div class="logo-container">
+            <img src="images/logo-gobcol.png" class="img-responsive">
+          </div>
+          <div class="logo-container">
+            <img src="images/logo-minedu.png" class="img-responsive">
+          </div>
+        </div>
+        <div class="two-logo-container">
+          <div class="logo-container">
+            <img src="images/logo-pca.png" class="img-responsive">
+          </div>
+          <div class="logo-container">
+            <img src="images/logo-asf.png" class="img-responsive">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

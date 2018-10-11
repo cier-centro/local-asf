@@ -1,3 +1,51 @@
 /*----------------------------------
 --------------Home-Items------------
 ------------------------------------*/
+
+.home-videos {
+  position: relative;
+
+  .video-buttons-container {
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    @include box-shadow-properties(0 0 20px 0 rgba(0, 0, 0, 0.3));
+  }
+
+  .embed-responsive-16by9 {
+    &.red {
+      background-color: $language-bg;
+    }
+
+    &.green {
+      background-color: $science-bg;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      height: 75px;
+      width: 108px;
+      background-image: url("#{$images-path}img-spritesheet.png");
+      background-position: -5px -62px;
+    }
+  }
+
+  h1 {
+    font-family: 'Montserrat-Medium';
+    font-size: 1.5em;
+    text-align: center;
+    color: $header-color1;
+  }
+
+  .btn-video {
+    width: 100%;
+  }
+}

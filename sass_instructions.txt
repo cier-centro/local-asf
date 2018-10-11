@@ -1,4 +1,4 @@
-estando en -> cd C:\xampp\htdocs\oim-saber11\interfaz-disco-duro
+estando en -> cd C:\xampp\htdocs\oim-saber11\interfaz-disco-duro\disk-content\pca\local-asf
 ejecutar -> sass --watch scss/style.scss:css/style.css
 
 

@@ -45,7 +45,7 @@ button.close {
   border-radius: 50%;
   opacity: 1;
   color: white;
-  font-size: 2.5em;
+  font-size: 2em;
   font-family: 'Montserrat-Medium';
   @include background-gradient-properties($cpa-color, $red-menu-color);
 }

@@ -537,6 +537,12 @@ paths = {
         "CIENCIAS": {
             "0": "ASF9-CIE-BIM1-DOCENTE.pdf",
             "1": "ASF9-CIE-BIM1-ESTUDIANTE.pdf",
+            "2": "ASF9-CIE-BIM2-DOCENTE.pdf",
+            "3": "ASF9-CIE-BIM2-ESTUDIANTE.pdf",
+            "4": "ASF9-CIE-BIM3-DOCENTE.pdf",
+            "5": "ASF9-CIE-BIM3-ESTUDIANTE.pdf",
+            "6": "ASF9-CIE-BIM4-DOCENTE.pdf",
+            "7": "ASF9-CIE-BIM4-ESTUDIANTE.pdf",
             "VIDEOS": {
                 "BIMESTRE_1": [
                     "ASF9-Ciencias-01.mp4",
@@ -555,12 +561,34 @@ paths = {
                     "ASF9-Ciencias-12.mp4",
                     "ASF9-Ciencias-13.mp4",
                     "ASF9-Ciencias-14.mp4"
+                ],
+                "BIMESTRE_3": [
+                    "ASF9-Ciencias-15.mp4",
+                    "ASF9-Ciencias-16.mp4",
+                    "ASF9-Ciencias-17.mp4",
+                    "ASF9-Ciencias-18.mp4",
+                    "ASF9-Ciencias-19.mp4",
+                    "ASF9-Ciencias-20.mp4"
+                ],
+                "BIMESTRE_4": [
+                    "ASF9-Ciencias-21.mp4",
+                    "ASF9-Ciencias-22.mp4",
+                    "ASF9-Ciencias-23.mp4",
+                    "ASF9-Ciencias-24.mp4",
+                    "ASF9-Ciencias-25.mp4",
+                    "ASF9-Ciencias-26.mp4"
                 ]
             }
         },
         "LENGUAJE": {
             "0": "ASF9-LEN-BIM1-DOCENTE.pdf",
             "1": "ASF9-LEN-BIM1-ESTUDIANTE.pdf",
+            "2": "ASF9-LEN-BIM2-DOCENTE.pdf",
+            "3": "ASF9-LEN-BIM2-ESTUDIANTE.pdf",
+            "4": "ASF9-LEN-BIM3-DOCENTE.pdf",
+            "5": "ASF9-LEN-BIM3-ESTUDIANTE.pdf",
+            "6": "ASF9-LEN-BIM4-DOCENTE.pdf",
+            "7": "ASF9-LEN-BIM4-ESTUDIANTE.pdf",
             "VIDEOS": {
                 "BIMESTRE_1": [
                     "ASF9-Lenguaje-01.mp4",
@@ -580,12 +608,29 @@ paths = {
                     "ASF9-Lenguaje-13.mp4",
                     "ASF9-Lenguaje-14.mp4",
                     "ASF9-Lenguaje-15.mp4"
+                ],
+                "BIMESTRE_3": [
+                    "ASF9-Lenguaje-16.mp4",
+                    "ASF9-Lenguaje-17.mp4",
+                    "ASF9-Lenguaje-18.mp4",
+                    "ASF9-Lenguaje-19.mp4",
+                    "ASF9-Lenguaje-20.mp4"
+                ],
+                "BIMESTRE_4": [
+                    "ASF9-Lenguaje-21.mp4",
+                    "ASF9-Lenguaje-22.mp4"
                 ]
             }
         },
         "MATEMATICAS": {
             "0": "ASF9-MAT-BIM1-DOCENTE.pdf",
             "1": "ASF9-MAT-BIM1-ESTUDIANTE.pdf",
+            "2": "ASF9-MAT-BIM2-DOCENTE.pdf",
+            "3": "ASF9-MAT-BIM2-ESTUDIANTE.pdf",
+            "4": "ASF9-MAT-BIM3-DOCENTE.pdf",
+            "5": "ASF9-MAT-BIM3-ESTUDIANTE.pdf",
+            "6": "ASF9-MAT-BIM4-DOCENTE.pdf",
+            "7": "ASF9-MAT-BIM4-ESTUDIANTE.pdf",
             "VIDEOS": {
                 "BIMESTRE_1": [
                     "ASF9-Matematicas-01.mp4",
@@ -612,12 +657,35 @@ paths = {
                     "ASF9-Matematicas-20.mp4",
                     "ASF9-Matematicas-21.mp4",
                     "ASF9-Matematicas-22.mp4"
+                ],
+                "BIMESTRE_3": [
+                    "ASF9-Matematicas-23.mp4",
+                    "ASF9-Matematicas-24.mp4",
+                    "ASF9-Matematicas-25.mp4",
+                    "ASF9-Matematicas-26.mp4",
+                    "ASF9-Matematicas-27.mp4",
+                    "ASF9-Matematicas-28.mp4",
+                    "ASF9-Matematicas-29.mp4",
+                    "ASF9-Matematicas-30.mp4",
+                    "ASF9-Matematicas-31.mp4"
+                ],
+                "BIMESTRE_4": [
+                    "ASF9-Matematicas-32.mp4",
+                    "ASF9-Matematicas-33.mp4",
+                    "ASF9-Matematicas-34.mp4",
+                    "ASF9-Matematicas-35.mp4"
                 ]
             }
         },
         "SOCIALES": {
             "0": "ASF9-SOC-BIM1-DOCENTE.pdf",
             "1": "ASF9-SOC-BIM1-ESTUDIANTE.pdf",
+            "2": "ASF9-SOC-BIM2-DOCENTE.pdf",
+            "3": "ASF9-SOC-BIM2-ESTUDIANTE.pdf",
+            "4": "ASF9-SOC-BIM3-DOCENTE.pdf",
+            "5": "ASF9-SOC-BIM3-ESTUDIANTE.pdf",
+            "6": "ASF9-SOC-BIM4-DOCENTE.pdf",
+            "7": "ASF9-SOC-BIM4-ESTUDIANTE.pdf",
             "VIDEOS": {
                 "BIMESTRE_1": [
                     "ASF9-Sociales-01.mp4",
@@ -655,6 +723,30 @@ paths = {
                     "ASF9-Sociales-31.mp4",
                     "ASF9-Sociales-32.mp4",
                     "ASF9-Sociales-33.mp4"
+                ],
+                "BIMESTRE_3": [
+                    "ASF9-Sociales-34.mp4",
+                    "ASF9-Sociales-35.mp4",
+                    "ASF9-Sociales-36.mp4",
+                    "ASF9-Sociales-37.mp4",
+                    "ASF9-Sociales-38.mp4",
+                    "ASF9-Sociales-39.mp4",
+                    "ASF9-Sociales-40.mp4",
+                    "ASF9-Sociales-41.mp4",
+                    "ASF9-Sociales-42.mp4",
+                    "ASF9-Sociales-43.mp4"
+                ],
+                "BIMESTRE_4": [
+                    "ASF9-Sociales-44.mp4",
+                    "ASF9-Sociales-45.mp4",
+                    "ASF9-Sociales-46.mp4",
+                    "ASF9-Sociales-47.mp4",
+                    "ASF9-Sociales-48.mp4",
+                    "ASF9-Sociales-49.mp4",
+                    "ASF9-Sociales-50.mp4",
+                    "ASF9-Sociales-51.mp4",
+                    "ASF9-Sociales-52.mp4",
+                    "ASF9-Sociales-53.mp4"
                 ]
             }
         }

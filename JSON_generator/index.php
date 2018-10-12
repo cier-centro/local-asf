@@ -36,8 +36,9 @@
   }*/
   $return_array = dirToArray("../AULAS_SIN_FRONTERAS");
   $fp = fopen('../js/paths.js', 'w');
-  fwrite($fp, json_encode($return_array, JSON_PRETTY_PRINT));   //here it will print the array pretty
+  fwrite($fp, "paths = ".json_encode($return_array, JSON_PRETTY_PRINT));   //here it will print the array pretty
   fclose($fp);
+
   echo json_encode($return_array, JSON_PRETTY_PRINT);
 
   function dirToArray($dir) {
@@ -51,16 +52,41 @@
         {
            if (is_dir($dir . DIRECTORY_SEPARATOR . $value))
            {
-              $result[$value] = dirToArray($dir . DIRECTORY_SEPARATOR . $value);
+              $result[$value] = dirToArray($dir . DIRECTORY_SEPARATOR . utf8_encode($value));
            }
            else
            {
-              $result[] = $value;
+              //echo "dirToArray {value} ".cleanString($value);
+              $result[] = utf8_encode($value);
            }
         }
      }
-
+     //echo json_encode($result, JSON_PRETTY_PRINT);
      return $result;
+  }
+
+  function cleanString($text) {
+    $utf8 = array(
+        '/[áàâãªä]/u'   =>   'a',
+        '/[ÁÀÂÃÄ]/u'    =>   'A',
+        '/[ÍÌÎÏ]/u'     =>   'I',
+        '/[íìîï]/u'     =>   'i',
+        '/[éèêë]/u'     =>   'e',
+        '/[ÉÈÊË]/u'     =>   'E',
+        '/[óòôõºö]/u'   =>   'o',
+        '/[ÓÒÔÕÖ]/u'    =>   'O',
+        '/[úùûü]/u'     =>   'u',
+        '/[ÚÙÛÜ]/u'     =>   'U',
+        '/ç/'           =>   'c',
+        '/Ç/'           =>   'C',
+        '/ñ/'           =>   'n',
+        '/Ñ/'           =>   'N',
+        '/–/'           =>   '-', // UTF-8 hyphen to "normal" hyphen
+        '/[’‘‹›‚]/u'    =>   ' ', // Literally a single quote
+        '/[“”«»„]/u'    =>   ' ', // Double quote
+        '/ /'           =>   ' ', // nonbreaking space (equiv. to 0x160)
+    );
+    return preg_replace(array_keys($utf8), array_values($utf8), $text);
   }
 
   ?>

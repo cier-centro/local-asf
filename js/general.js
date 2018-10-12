@@ -23,7 +23,11 @@ function createSubjectLink(subject, grade) {
   var buttonContainerClass = getSubjectLinkContainer(subject, grade);
   var gradeContainerClass = "grade-button-container-" + grade.toLowerCase().replace("_", "");
   var linkButton = getSubjectAndGradeURL(subject, grade);
-  var subjectText = subject.toLowerCase();
+  if(subject=="MATEMATICAS"){
+    var subjectText = "matemáticas";
+  }else{
+    var subjectText = subject.toLowerCase();
+  }
   var place = 'div.' + gradeContainerClass + " ." + buttonContainerClass;
   createLink('', subjectText, linkButton, '', place);
 }

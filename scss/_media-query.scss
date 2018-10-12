@@ -19,6 +19,52 @@
     }
   }
 }
+@media screen and (min-width: 992px) {
+  .open {
+    .subject-link-container-ciencias {
+      top: 140px !important;
+      left: -132px !important;
+    }
+
+    .subject-link-container-sociales {
+      top: 140px !important;
+      left: 170px !important;
+    }
+
+    .subject-link-container-matematicas {
+      top: 210px !important;
+      left: 76px !important;
+    }
+
+    .subject-link-container-lenguaje {
+      top: 210px !important;
+      left: -40px !important;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .open {
+    .subject-link-container-ciencias {
+      top: 140px !important;
+      left: 15px !important;
+    }
+
+    .subject-link-container-sociales {
+      top: 410px !important;
+      left: 15px !important;
+    }
+
+    .subject-link-container-matematicas {
+      top: 320px !important;
+      left: 15px !important;
+    }
+
+    .subject-link-container-lenguaje {
+      top: 230px !important;
+      left: 15px !important;
+    }
+  }
+}
 @media screen and (min-width: 550px) and (max-width:991px) {
   .bimester-content {
     .guide-modal-button,
@@ -36,12 +82,16 @@
   .header {
     .header-first-row {
       display: flex;
-      padding-bottom: 20px;
+    }
+
+    .site-title {
+      max-width: 43vw;
     }
 
     .header-logo-container {
       .img-responsive {
-        max-width: 25vw;
+        max-width: 18vw;
+        margin-bottom: 18px;
       }
     }
   }

@@ -2,8 +2,8 @@
 ---------------Main Menu------------
 ------------------------------------*/
 %main-menu-button {
-  height: 172px;
-  width: 172px;
+  height: 140px;
+  width: 140px;
   background-color: $main-menu-bg;
   border-radius: 50%;
   border: 3px solid white;
@@ -36,6 +36,10 @@
     border-radius: 200px;
   }
 
+  .btn:active:focus {
+    outline: 0;
+  }
+
   .home-button-container {
     .btn-primary {
       @extend %main-menu-button;
@@ -47,7 +51,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("#{$images-path}img-menu-home.png") no-repeat center 60% /50% auto;
+        background: url("#{$images-path}img-menu-home.png") no-repeat center 70% /50% auto;
       }
 
       &:hover {
@@ -57,7 +61,7 @@
   }
 
   .dropdown {
-    margin-left: 5vw;
+    margin-left: 4vw;
 
     .btn {
       padding-bottom: 80%;
@@ -67,12 +71,12 @@
       &:after {
         position: absolute;
         font-family: 'Montserrat-Medium';
-        font-size: 5.5em;
+        font-size: 4.5em;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        padding-top: 20px;
+        padding-top: 22px;
       }
 
       &:hover {
@@ -117,23 +121,24 @@
 
     a,
     li {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 100%;
     }
 
     li {
       position: absolute;
-      top: 36px;
-      left: 36px;
+      top: 20px;
+      left: 20px;
+      @include box-shadow-properties(2px 3px 3px 2px rgba(0, 0, 0, 0.3));
       @include transition-properties(all 0.4s ease);
     }
 
     a {
-      padding: 60px 0 0;
+      padding: 65px 0 0;
       text-transform: capitalize;
       font-family: 'Montserrat-Medium';
-      font-size: 0.8em;
+      font-size: 0.95em;
       text-align: center;
       color: white;
       position: relative;
@@ -215,26 +220,6 @@
 
     & > .dropdown-toggle.btn-primary:focus {
       background-color: $main-menu-bg-selected;
-    }
-
-    .subject-link-container-ciencias {
-      top: 160px;
-      left: -100px;
-    }
-
-    .subject-link-container-sociales {
-      top: 160px;
-      left: 172px;
-    }
-
-    .subject-link-container-matematicas {
-      top: 230px;
-      left: 90px;
-    }
-
-    .subject-link-container-lenguaje {
-      top: 230px;
-      left: -17px;
     }
   }
 }

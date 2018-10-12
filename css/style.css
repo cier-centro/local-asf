@@ -303,8 +303,8 @@ button.close {
 ---------------Main Menu------------
 ------------------------------------*/
 .main-menu .home-button-container .btn-primary, .main-menu .dropdown .btn {
-  height: 172px;
-  width: 172px;
+  height: 140px;
+  width: 140px;
   background-color: #59C0E4;
   border-radius: 50%;
   border: 3px solid white;
@@ -330,6 +330,8 @@ button.close {
     margin: 20px;
     border: 3px solid rgba(22, 40, 115, 0.2);
     border-radius: 200px; }
+  .main-menu .btn:active:focus {
+    outline: 0; }
   .main-menu .home-button-container .btn-primary:after {
     content: "";
     position: absolute;
@@ -337,21 +339,21 @@ button.close {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../images/img-menu-home.png") no-repeat center 60%/50% auto; }
+    background: url("../images/img-menu-home.png") no-repeat center 70%/50% auto; }
   .main-menu .dropdown {
-    margin-left: 5vw; }
+    margin-left: 4vw; }
     .main-menu .dropdown .btn {
       padding-bottom: 80%;
       z-index: 2; }
       .main-menu .dropdown .btn:after {
         position: absolute;
         font-family: 'Montserrat-Medium';
-        font-size: 5.5em;
+        font-size: 4.5em;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        padding-top: 20px; }
+        padding-top: 22px; }
   .main-menu .grade-button-container-grado7 .btn:after {
     content: "7"; }
   .main-menu .grade-button-container-grado8 .btn:after {
@@ -369,23 +371,26 @@ button.close {
     width: 100%; }
     .main-menu .dropdown-menu a,
     .main-menu .dropdown-menu li {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 100%; }
     .main-menu .dropdown-menu li {
       position: absolute;
-      top: 36px;
-      left: 36px;
+      top: 20px;
+      left: 20px;
+      -webkit-box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.3);
       -webkit-transition: all 0.4s ease;
       -moz-transition: all 0.4s ease;
       -ms-transition: all 0.4s ease;
       -o-transition: all 0.4s ease;
       transition: all 0.4s ease; }
     .main-menu .dropdown-menu a {
-      padding: 60px 0 0;
+      padding: 65px 0 0;
       text-transform: capitalize;
       font-family: 'Montserrat-Medium';
-      font-size: 0.8em;
+      font-size: 0.95em;
       text-align: center;
       color: white;
       position: relative; }
@@ -431,18 +436,6 @@ button.close {
     display: none; }
   .main-menu .open > .dropdown-toggle.btn-primary:focus {
     background-color: #3165A0; }
-  .main-menu .open .subject-link-container-ciencias {
-    top: 160px;
-    left: -100px; }
-  .main-menu .open .subject-link-container-sociales {
-    top: 160px;
-    left: 172px; }
-  .main-menu .open .subject-link-container-matematicas {
-    top: 230px;
-    left: 90px; }
-  .main-menu .open .subject-link-container-lenguaje {
-    top: 230px;
-    left: -17px; }
 
 /*----------------------------------
 ----------------Footer--------------
@@ -467,6 +460,32 @@ button.close {
   .bimester-content .video-modal-button {
     width: 31%;
     margin-right: 2%; } }
+@media screen and (min-width: 992px) {
+  .open .subject-link-container-ciencias {
+    top: 140px !important;
+    left: -132px !important; }
+  .open .subject-link-container-sociales {
+    top: 140px !important;
+    left: 170px !important; }
+  .open .subject-link-container-matematicas {
+    top: 210px !important;
+    left: 76px !important; }
+  .open .subject-link-container-lenguaje {
+    top: 210px !important;
+    left: -40px !important; } }
+@media screen and (max-width: 991px) {
+  .open .subject-link-container-ciencias {
+    top: 140px !important;
+    left: 15px !important; }
+  .open .subject-link-container-sociales {
+    top: 410px !important;
+    left: 15px !important; }
+  .open .subject-link-container-matematicas {
+    top: 320px !important;
+    left: 15px !important; }
+  .open .subject-link-container-lenguaje {
+    top: 230px !important;
+    left: 15px !important; } }
 @media screen and (min-width: 550px) and (max-width: 991px) {
   .bimester-content .guide-modal-button,
   .bimester-content .video-modal-button {
@@ -477,10 +496,12 @@ button.close {
     font-size: 20px; }
 
   .header .header-first-row {
-    display: flex;
-    padding-bottom: 20px; }
+    display: flex; }
+  .header .site-title {
+    max-width: 43vw; }
   .header .header-logo-container .img-responsive {
-    max-width: 25vw; }
+    max-width: 18vw;
+    margin-bottom: 18px; }
 
   .subject-content .main-title {
     font-size: 2.75em; }

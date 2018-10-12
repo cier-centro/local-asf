@@ -271,7 +271,7 @@ button.close {
     border-radius: 15px;
     margin-top: 30px;
     margin-bottom: 30px;
-    padding: 10px;
+    padding: 20px;
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); }
@@ -291,11 +291,26 @@ button.close {
     width: 108px;
     background-image: url("../images/img-spritesheet.png");
     background-position: -5px -62px; }
+  .home-videos p {
+    font-size: 0.9em; }
   .home-videos h1 {
     font-family: 'Montserrat-Medium';
     font-size: 1.5em;
     text-align: center;
-    color: #162873; }
+    color: #162873;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px; }
+    .home-videos h1:after {
+      content: "";
+      position: absolute;
+      width: 142px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      margin: auto;
+      border: 1px solid #2f296e; }
   .home-videos .btn-video {
     width: 100%; }
 

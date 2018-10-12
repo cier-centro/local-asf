@@ -20,6 +20,10 @@
   }
 }
 @media screen and (min-width: 992px) {
+  .dropdown {
+    margin-left: 4vw;
+  }
+
   .open {
     .subject-link-container-ciencias {
       top: 140px !important;
@@ -43,6 +47,10 @@
   }
 }
 @media screen and (max-width: 991px) {
+  .dropdown {
+    margin-left: 15px;
+  }
+
   .open {
     .subject-link-container-ciencias {
       top: 140px !important;

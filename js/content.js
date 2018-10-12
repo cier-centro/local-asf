@@ -5,7 +5,11 @@ $(document).ready(function() {
   selectedGrade = getAllUrlParams().grd;
   selectedArray = getSelectedParametersArray();
   $(".subject-content").addClass(selectedSubject);
-  $("h1.main-title").text(selectedSubject);
+  if(selectedSubject != "matematicas"){
+    $("h1.main-title").text(selectedSubject);
+  }else{
+    $("h1.main-title").text("matemáticas");
+  }
   $("h2.grade-title").text(selectedGrade);
   bimesterArray = getBimesterArray();
   console.log(bimesterArray);
